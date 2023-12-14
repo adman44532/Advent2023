@@ -57,12 +57,16 @@ std::vector<std::string> splitString(std::string stringToSplit, const std::strin
    return wordList;
 }
 
+// Removes trailing white spaces from the beginning and end of string where applicable
+// param stringToTrim: Modifies the given string
 void trimString(std::string& stringToTrim)
 {
+   // Check the starting value for space
    if (stringToTrim[0] == ' ')
    {
-      stringToTrim = stringToTrim.substr(1, stringToTrim.back());
+      stringToTrim = stringToTrim.substr(1, stringToTrim.size());
    }
+   // Check the last value for space
    if (stringToTrim.back() == ' ')
    {
       stringToTrim.pop_back();
@@ -74,7 +78,7 @@ void trimString(std::string& stringToTrim)
 // param output: Reference to the output vector for the number of matches
 void computeNumberOfMatches(const std::vector<std::string>& cardList, std::vector<int> &output)
 {
-   // Compute the number of matches for each card
+   // Compute the number of matches for each card, a series of string splits to get the right information
    for (const auto& card : cardList)
    {
       std::set<int> winningNumbers;
@@ -89,7 +93,6 @@ void computeNumberOfMatches(const std::vector<std::string>& cardList, std::vecto
       std::vector<std::string> cardData = splitString(cardInfo[1], "|");
 
       // GET WINNING NUMBERS
-      // In the first set, we need to remove the trailing spaces
       trimString(cardData[0]);
       std::vector<std::string> dataStr = splitString(cardData[0], " ");
       // Convert each number to int and add to set
@@ -121,18 +124,31 @@ int main()
 {
    std::vector<std::string> cardList;
    std::vector<int> numOfMatches;
-   int totalCards = 0;
-   // Read in the file
+
    readFile(cardList);
 
    computeNumberOfMatches(cardList, numOfMatches);
 
-   std::cout << "The matches: ";
-   for (auto& i : numOfMatches)
+   // For the length of the # of cards, create a tally list to have a count of each card (and add onto next), fill the vector with 1s
+   std::vector<int> tallies(numOfMatches.size(), 1);
+
+   // Loop through the tallies to compute its copies
+   for (int i = 0, talliesSize = tallies.size(); i < talliesSize; i++)
    {
-      std::cout << i << ", ";
+      // Loop down for x number cards for x matches below the current value
+      for (size_t j = 1, loopSize = numOfMatches[i]; j <= loopSize; j++)
+      {
+         // Adding the current amount of tallies to the following x cards below
+         tallies[i + j] += tallies[i];
+      }
    }
-   std::cout << "\n";
+
+   // Run through the tallies summing all the values
+   int totalCards = 0;
+   for (const auto& tally : tallies)
+   {
+      totalCards += tally;
+   }
    
    // Print the final result
    std::cout << "The total number of cards is... " << totalCards << "\n";
