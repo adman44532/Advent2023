@@ -127,13 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="days\Day_01\Day_01.cpp" />
+    <ClCompile Include="days\Day_02\Day02.cpp" />
+    <ClCompile Include="days\Day_01\Day01.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shared\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="days\Day_02\Day02.h" />
     <ClInclude Include="days\Day.h" />
-    <ClInclude Include="days\Day_01\Day_01.h" />
+    <ClInclude Include="days\Day_01\Day01.h" />
     <ClInclude Include="shared\Utils.h" />
   </ItemGroup>
   <ItemGroup>

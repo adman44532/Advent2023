@@ -18,10 +18,13 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="days\Day_01\Day_01.cpp">
+    <ClCompile Include="days\Day_01\Day01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="shared\Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="days\Day_02\Day02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,10 +32,13 @@
     <ClInclude Include="days\Day.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="days\Day_01\Day_01.h">
+    <ClInclude Include="days\Day_01\Day01.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="shared\Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="days\Day_02\Day02.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
