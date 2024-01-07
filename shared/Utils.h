@@ -4,6 +4,7 @@
 #include <string>
 
 typedef std::vector<std::string> fileOutputStr;
+typedef std::vector<std::string> wordList;
 
 namespace Utils {
 	/**
@@ -17,4 +18,13 @@ namespace Utils {
 	 *                       an empty vector is returned if the file is inaccessible.
 	 */
 	 fileOutputStr readInput(std::string &fileName);
+
+	 /**
+	  * Splits a given string by the passed delimeter
+	  * 
+	  * @param stringToSplit The string to be split
+	  * @param delim The delimeter to split by
+	  * @return wordList A vector of strings with each string being a word found when split
+	  */
+	 wordList splitString(std::string stringToSplit, std::string& delim);
 }
