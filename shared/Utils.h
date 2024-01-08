@@ -36,5 +36,5 @@ namespace Utils
     * \param   delim         The delimeter to split by
     * \return  wordList     A vector of strings with each string being a word found when split
     */
-   wordList SplitString(std::string& stringToSplit, char& delim);
+   wordList SplitString(std::string& stringToSplit, char delim);
 }
