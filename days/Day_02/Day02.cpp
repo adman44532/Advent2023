@@ -1,9 +1,11 @@
 #include "Day02.h"
 
-void Day02::part1()
+size_t Day02::part1()
 {
+   return 0;
 }
 
-void Day02::part2()
+size_t Day02::part2()
 {
+   return 0;
 }

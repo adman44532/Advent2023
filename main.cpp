@@ -6,5 +6,5 @@
 int main()
 {
    Day01 day01("inputs/day01.txt");
-   day01.solve();
+   day01.display();
 }

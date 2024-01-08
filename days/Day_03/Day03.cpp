@@ -1,9 +1,15 @@
 #include "Day03.h"
 
-void Day03::part1()
+size_t Day03::part1()
 {
+   return 0;
 }
 
-void Day03::part2()
+size_t Day03::part2()
+{
+   return 0;
+}
+
+void Day03::display()
 {
 }

@@ -9,10 +9,11 @@ class Day04 : public Day
 public:
    Day04(std::string fileName)
    {
-      fileContents = Utils::readInput(fileName);
+      fileContents = Utils::ReadInput(fileName);
    }
-   void part1() override;
-   void part2() override;
+   size_t part1() override;
+   size_t part2() override;
+   void display() override;
 };
 
 #endif // !DAY04_H

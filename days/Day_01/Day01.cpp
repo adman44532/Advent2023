@@ -2,7 +2,7 @@
 #include "../../shared/Utils.h"
 #include <map>
 
-void Day01::part1()
+size_t Day01::part1()
 {
    int finalSum = 0;
    // For each line in the file
@@ -43,10 +43,10 @@ void Day01::part1()
 
       finalSum += std::stoi(calibrationValueStr);
    }
-   std::cout << "Day #1 Part #1: " << finalSum << "\n";
+   return finalSum;
 }
 
-void Day01::part2()
+size_t Day01::part2()
 {
    // This solution assumes that the input wouldn't contain the first 3 chars of any number word
    typedef std::map<std::string, char> wordNumMap;
@@ -143,5 +143,12 @@ void Day01::part2()
 
       finalSum += std::stoi(calibrationValueStr);
    }
-   std::cout << "Day #1 Part #2: " << finalSum << "\n";
+   return finalSum;
+}
+
+void Day01::display()
+{
+   std::cout << "--- Day 1: Trebuchet?! ---\n";
+   std::cout << "Part 1: What is the sum of all of the calibration values? " << part1() << "\n";
+   std::cout << "Part 2: What is the sum of all of the calibration values? " << part2() << "\n";
 }
