@@ -27,6 +27,21 @@
     <ClCompile Include="days\Day_02\Day02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="days\Day_03\Day03.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="days\Day_04\Day04.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="days\Day_05\Day05.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="days\Day_06\Day06.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="days\Day_07\Day07.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="days\Day.h">
@@ -39,6 +54,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="days\Day_02\Day02.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="days\Day_03\Day03.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="days\Day_04\Day04.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="days\Day_05\Day05.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="days\Day_06\Day06.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="days\Day_07\Day07.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
