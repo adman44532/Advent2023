@@ -1,8 +1,9 @@
 #include "Utils.h"
 #include "fstream"
 #include <iostream>
+#include <sstream>
 
-fileOutputStr Utils::readInput(std::string& fileName)
+fileOutputStr Utils::ReadInput(std::string& fileName)
 {
    fileOutputStr output;
    std::ifstream file(fileName);
@@ -24,7 +25,7 @@ fileOutputStr Utils::readInput(std::string& fileName)
    return output;
 }
 
-wordList Utils::splitString(std::string stringToSplit, std::string& delim)
+wordList Utils::SplitStringPos(std::string stringToSplit, std::string& delim)
 {
    wordList words;
    size_t pos = 0;
@@ -49,6 +50,20 @@ wordList Utils::splitString(std::string stringToSplit, std::string& delim)
    if ( words.back() != stringToSplit )
    {
       words.push_back(stringToSplit);
+   }
+
+   return words;
+}
+
+wordList Utils::SplitString(std::string& stringToSplit, char& delim)
+{
+   wordList words;
+   std::string temp;
+   std::stringstream ss(stringToSplit);
+
+   while ( std::getline(ss, temp, delim) )
+   {
+      words.push_back(temp);
    }
 
    return words;
