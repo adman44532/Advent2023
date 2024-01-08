@@ -148,7 +148,7 @@ size_t Day01::part2()
 
 void Day01::display()
 {
-   std::cout << "--- Day 1: Trebuchet?! ---\n";
+   std::cout << "\n--- Day 1: Trebuchet?! ---\n";
    std::cout << "Part 1: What is the sum of all of the calibration values? " << part1() << "\n";
    std::cout << "Part 2: What is the sum of all of the calibration values? " << part2() << "\n";
 }
