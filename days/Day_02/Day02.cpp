@@ -14,29 +14,25 @@ using RGB = struct
 
 size_t Day02::part1()
 {
-   std::map<std::string, int> bag = {
-      {"red", 12},
-      {"green", 13},
-      {"blue", 14}
-   };
+   // Bag of marbles defined in hpp
 
    std::vector<int> possibleGameIDs;
 
-   for ( auto& game : fileContents )
+   for (const auto& game : fileContents )
    {
       bool hasGameFailed = false;
 
       // Example game line - Game 1: 12 red, 2 green, 5 blue; 9 red, 6 green, 4 blue
       // ':' Separates the Game Info from the draws
       // ';' Separates the different draws
-      // ' ' Separates the inbetween
+      // ' ' Separates the in between
       auto gameInfo = Utils::SplitString(game, ':'); 
 
       int gameID = std::stoi(Utils::SplitString(gameInfo[0], ' ').back());
 
       auto gameDraws = Utils::SplitString(gameInfo[1], ';');
 
-      for ( auto& draw : gameDraws )
+      for (const auto& draw : gameDraws )
       {
          RGB tallyRGB = { 0,0,0 };
 
@@ -88,7 +84,70 @@ size_t Day02::part1()
 
 size_t Day02::part2()
 {
-   return 0;
+   // Bag of marbles defined in hpp
+
+   std::vector<int> possibleGameIDs;
+   size_t finalPower = 0;
+
+   for (const auto& game : fileContents )
+   {
+      RGB highestTallyRGB = { 0,0,0 };
+      bool hasGameFailed = false;
+
+      // Example game line - Game 1: 12 red, 2 green, 5 blue; 9 red, 6 green, 4 blue
+      // ':' Separates the Game Info from the draws
+      // ';' Separates the different draws
+      // ' ' Separates the in between
+      auto gameInfo = Utils::SplitString(game, ':');
+
+      int gameID = std::stoi(Utils::SplitString(gameInfo[0], ' ').back());
+
+      auto gameDraws = Utils::SplitString(gameInfo[1], ';');
+
+      for (const auto& draw : gameDraws )
+      {
+         RGB tallyRGB = { 0,0,0 };
+         
+         auto colours = Utils::SplitString(draw, ',');
+         for ( auto& colour : colours )
+         {
+            colour = colour.substr(1, colour.back());
+
+            auto keyValue = Utils::SplitString(colour, ' ');
+            if ( keyValue[1] == "red" )
+            {
+               auto value = std::stoi(keyValue[0]);
+               if ( value > highestTallyRGB.red )
+               {
+                  highestTallyRGB.red = value;
+               }
+               tallyRGB.red += std::stoi(keyValue[0]);
+            }
+            else if ( keyValue[1] == "green" )
+            {
+               auto value = std::stoi(keyValue[0]);
+               if ( value > highestTallyRGB.green )
+               {
+                  highestTallyRGB.green = value;
+               }
+               tallyRGB.green += std::stoi(keyValue[0]);
+            }
+            else if ( keyValue[1] == "blue" )
+            {
+               auto value = std::stoi(keyValue[0]);
+               if ( value > highestTallyRGB.blue )
+               {
+                  highestTallyRGB.blue = value;
+               }
+               tallyRGB.blue += std::stoi(keyValue[0]);
+            }
+         }
+         
+      }
+      finalPower += highestTallyRGB.red * highestTallyRGB.green * highestTallyRGB.blue;
+   }
+
+   return finalPower;
 }
 
 void Day02::display()
