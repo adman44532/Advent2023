@@ -55,7 +55,7 @@ wordList Utils::SplitStringPos(std::string stringToSplit, std::string& delim)
    return words;
 }
 
-wordList Utils::SplitString(std::string& stringToSplit, char delim)
+wordList Utils::SplitString(std::string stringToSplit, char delim)
 {
    wordList words;
    std::string temp;
